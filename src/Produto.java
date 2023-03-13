@@ -10,6 +10,10 @@ public class Produto {
 	private double lucroPercentual;
 	private int quantidade;
 	
+	public Produto() {
+		
+	}
+	
 	public String getNome() {
 		return nome;
 	}

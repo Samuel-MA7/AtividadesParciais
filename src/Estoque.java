@@ -2,7 +2,11 @@ import java.util.ArrayList;
 
 public class Estoque {
 	
-	private ArrayList<Produto> produtos;
+	private ArrayList<Produto> produtos = new ArrayList<Produto>();
+	
+	public Estoque() {
+		
+	}
 	
 	public ArrayList<Produto> getProdutos() {
 		return produtos;
@@ -12,14 +16,18 @@ public class Estoque {
 		this.produtos = produtos;
 	}
 
-	public String mostrarQuantEstoque(Produto p, int quantidadeEstoque) {
-		quantidadeEstoque = p.getQuantidade();
-		return "Quantidade do Estoque= " + quantidadeEstoque;
+	public String mostrarQuantEstoque(Produto p) {
+		return "Quantidade do Estoque= " + p.getQuantidade();
 	}
 	
 	public void adicionarProduto(Produto p) {
 		this.produtos.add(p);
-		System.out.println("Produto adicionado ao estoque.");
+		if (produtos != null) {
+			System.out.println("Produto adicionado ao estoque.");
+		} else {
+			System.out.println("Estoque vazio.");
+		}
+		
 	}
 	
 	public void retirarProduto(Produto p) {

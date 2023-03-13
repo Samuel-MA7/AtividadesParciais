@@ -3,6 +3,10 @@ public class Loja {
 	
 	private Estoque estoque;
 	
+	public Loja() {
+		
+	}
+	
 	public Estoque getEstoque() {
 		return estoque;
 	}
@@ -25,4 +29,5 @@ public class Loja {
 		//método da interface Compra, apenas exemplo
 	}
 	
+
 }
