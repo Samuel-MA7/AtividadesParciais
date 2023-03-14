@@ -16,8 +16,9 @@ public class Estoque {
 		this.produtos = produtos;
 	}
 
-	public String mostrarQuantEstoque(Produto p) {
-		return "Quantidade do Estoque= " + p.getQuantidade();
+	public void mostrarQuantEstoque(Produto p) {
+		int quantidade = p.getQuantidade();
+		System.out.println("Quantidade no Estoque= " + quantidade);
 	}
 	
 	public void adicionarProduto(Produto p) {
@@ -32,7 +33,19 @@ public class Estoque {
 	
 	public void retirarProduto(Produto p) {
 		this.produtos.remove(p);
-		System.out.println("Produto removido do estoque.");
+		if (produtos != null) {
+			p.setQuantidade(0);
+			System.out.println("Produto removido do estoque.");
+		} else {
+			System.out.println("Estoque vazio.");
+		}
+		
 	}
+
+	@Override
+	public String toString() {
+		return "Estoque [produtos=" + produtos + "]";
+	}
+	
 	
 }

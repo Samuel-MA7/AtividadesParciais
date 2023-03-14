@@ -15,19 +15,33 @@ public class Loja {
 		this.estoque = estoque;
 	}
 
-	public String mostrarEstoque() {
-		return "Estoque: " + estoque;
+	public void mostrarEstoque() {
+		System.out.println("Estoque: " + estoque);
 	}
 	
-	public double pagar() {
-		return 0;
+	public void pagar() {
 		//método da interface Pagamento, apenas exemplo
 	}
 	
-	public double comprar() {
-		return 0;
+	public void comprar() {
 		//método da interface Compra, apenas exemplo
 	}
 	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Loja loja = new Loja();
+		Estoque estoque = new Estoque();
+		Produto produto = new Produto();
+		produto.setQuantidade(15);
+		
+		loja.setEstoque(estoque);
+		loja.getEstoque().adicionarProduto(produto);
+		loja.getEstoque().mostrarQuantEstoque(produto);
+		loja.mostrarEstoque();
+		loja.getEstoque().retirarProduto(produto);
+		loja.getEstoque().mostrarQuantEstoque(produto);
+		loja.mostrarEstoque();
+		
+	}
 
 }
